@@ -21,7 +21,9 @@ ENV PATH=$CONDA_DIR/bin:$PATH
 RUN conda create -n torch python=3.10 -y && conda init bash && echo "source activate torch" >> ~/.bashrc
 ENV PATH /opt/conda/envs/torch/bin:$PATH
 
-RUN conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.6 -c pytorch -c nvidia -y
+# RUN conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.6 -c pytorch -c nvidia -y
+
+RUN yes | pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu116
 
 RUN yes | pip install accelerate==0.18.0 bitsandbytes==0.38.1 transformers==4.28.1 pydantic==1.10.8 openai==0.28
 
