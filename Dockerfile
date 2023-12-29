@@ -25,5 +25,5 @@ ENV PATH /opt/conda/envs/torch/bin:$PATH
 
 RUN yes | pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 torchaudio==0.13.1 --extra-index-url https://download.pytorch.org/whl/cu116
 
-RUN yes | pip install accelerate==0.18.0 bitsandbytes==0.38.1 transformers==4.28.1 pydantic==1.10.8 openai==0.28
+RUN yes | pip install accelerate==0.18.0 bitsandbytes==0.38.1 transformers==4.28.1 pydantic==1.10.8 openai==0.28 ipykernel
 
