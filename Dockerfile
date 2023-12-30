@@ -27,3 +27,5 @@ RUN yes | pip install torch==1.13.1+cu116 torchvision==0.14.1+cu116 torchaudio==
 
 RUN yes | pip install accelerate==0.18.0 bitsandbytes==0.38.1 transformers==4.28.1 pydantic==1.10.8 openai==0.28 ipykernel
 
+ADD https://raw.githubusercontent.com/ChengJiacheng/docker-viper/main/requirements.txt ./ 
+RUN pip install -r requirements.txt
